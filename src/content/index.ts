@@ -9,6 +9,18 @@ import {
 
 const INJECTED_ATTR = 'data-hhr-injected'
 
+function refreshOrderCardRatings() {
+  // Remove existing summaries so they get re-rendered with fresh data
+  document.querySelectorAll('[data-hhr-card-summary]').forEach(el => {
+    render(null, el)
+    el.remove()
+  })
+  injectOrderCardRatings()
+}
+
+// Need render for cleanup
+import { render } from 'preact'
+
 function isOrdersPage(): boolean {
   return location.pathname.includes('/orders')
 }
@@ -38,9 +50,10 @@ function observeOrderModal() {
     const overlay = document.querySelector(SELECTORS.orderDetailModal)
     if (!overlay) return
 
-    const modalBox = overlay.querySelector(SELECTORS.orderDetailModalBox) as HTMLElement | null
-    if (!modalBox) return
-    if (modalBox.getAttribute(INJECTED_ATTR) === 'true') return
+    const modalBoxEl = overlay.querySelector(SELECTORS.orderDetailModalBox) as HTMLElement | null
+    if (!modalBoxEl) return
+    if (modalBoxEl.getAttribute(INJECTED_ATTR) === 'true') return
+    const modalBox = modalBoxEl
 
     modalBox.setAttribute(INJECTED_ATTR, 'true')
     injectOrderRatingPanel(modalBox)
@@ -53,10 +66,16 @@ function observeOrderModal() {
     })
     removalObserver.observe(document.body, { childList: true, subtree: true })
 
+    function onModalClose() {
+      cleanupOrderRatingPanel(modalBox)
+      // Re-inject order card ratings to reflect any new/updated ratings
+      refreshOrderCardRatings()
+    }
+
     // Handle close button
     const closeBtn = modalBox.querySelector(SELECTORS.modalCloseButton)
     if (closeBtn) {
-      closeBtn.addEventListener('click', () => cleanupOrderRatingPanel(modalBox), { once: true })
+      closeBtn.addEventListener('click', onModalClose, { once: true })
     }
 
     // Handle backdrop click
@@ -66,7 +85,7 @@ function observeOrderModal() {
         'click',
         (e: Event) => {
           if (e.target === bgClick) {
-            cleanupOrderRatingPanel(modalBox)
+            onModalClose()
           }
         },
         { once: true },
@@ -78,29 +97,42 @@ function observeOrderModal() {
 }
 
 // --- Restaurant page: badge injection ---
-function observeRestaurantPage() {
-  // Initial injection
-  injectRestaurantBadges()
-  injectDishBadges()
+let menuObserverAttached = false
 
-  // Re-inject when #restaurantMenu changes (restaurant switch)
+function attachMenuObserver() {
+  if (menuObserverAttached) return
   const menuEl = document.querySelector(SELECTORS.restaurantMenu)
-  if (menuEl) {
-    const menuObserver = new MutationObserver(() => {
-      injectRestaurantBadges()
-      injectDishBadges()
-    })
-    menuObserver.observe(menuEl, { childList: true, subtree: true })
-  }
+  if (!menuEl) return
 
-  // Also observe the cards container for late-loading cards
-  const cardsContainer = document.querySelector('#all-cards-container')
-  if (cardsContainer) {
-    const cardsObserver = new MutationObserver(() => {
-      injectRestaurantBadges()
-    })
-    cardsObserver.observe(cardsContainer, { childList: true, subtree: true })
-  }
+  menuObserverAttached = true
+  const menuObserver = new MutationObserver(() => {
+    injectRestaurantBadges()
+    injectDishBadges()
+  })
+  menuObserver.observe(menuEl, { childList: true, subtree: true })
+
+  // Inject immediately for the current menu content
+  injectDishBadges()
+}
+
+function observeRestaurantPage() {
+  // Initial injection for cards (always visible)
+  injectRestaurantBadges()
+
+  // Try attaching menu observer if menu already exists
+  attachMenuObserver()
+
+  // Observe body for #restaurantMenu to appear (user clicks "Order Lunch")
+  const bodyObserver = new MutationObserver(() => {
+    injectRestaurantBadges()
+    const menuEl = document.querySelector(SELECTORS.restaurantMenu)
+    if (menuEl) {
+      attachMenuObserver()
+      // Also inject dish badges when menu content changes after initial load
+      injectDishBadges()
+    }
+  })
+  bodyObserver.observe(document.body, { childList: true, subtree: true })
 }
 
 // --- SPA route change detection ---
