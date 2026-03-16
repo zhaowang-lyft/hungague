@@ -1,0 +1,18 @@
+{
+  "manifest_version": 3,
+  "name": "HungerHub Ratings",
+  "version": "1.0.0",
+  "description": "Rate and review dishes from your HungerHub orders",
+  "permissions": ["storage"],
+  "host_permissions": [
+    "*://uncatering.hungerhub.com/*"
+  ],
+  "content_scripts": [
+    {
+      "matches": ["*://uncatering.hungerhub.com/*"],
+      "js": ["src/content/index.ts"],
+      "run_at": "document_idle"
+    }
+  ],
+  "icons": {}
+}
