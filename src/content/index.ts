@@ -1,3 +1,4 @@
+import 'webextension-polyfill'
 import { SELECTORS } from './selectors'
 import {
   injectOrderRatingPanel,

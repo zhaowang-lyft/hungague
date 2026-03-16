@@ -6,6 +6,23 @@ interface Props {
   readonly?: boolean
 }
 
+const STAR_PATH = 'M12 2l3.09 6.26L22 9.27l-5 4.87L18.18 22 12 18.56 5.82 22 7 14.14 2 9.27l6.91-1.01L12 2z'
+
+function Star({ fill }: { fill: number }) {
+  const id = `star-grad-${Math.random().toString(36).slice(2, 8)}`
+  return (
+    <svg viewBox="0 0 24 24" width="24" height="24" style={{ display: 'block' }}>
+      <defs>
+        <linearGradient id={id}>
+          <stop offset={`${fill * 100}%`} stop-color="#f5a623" />
+          <stop offset={`${fill * 100}%`} stop-color="#ddd" />
+        </linearGradient>
+      </defs>
+      <path d={STAR_PATH} fill={`url(#${id})`} />
+    </svg>
+  )
+}
+
 export function RatingWidget({ value, onChange, readonly = false }: Props) {
   const [hoverValue, setHoverValue] = useState<number | null>(null)
   const displayValue = hoverValue ?? value
@@ -34,6 +51,7 @@ export function RatingWidget({ value, onChange, readonly = false }: Props) {
       class="hhr-rating-widget"
       style={{
         display: 'inline-flex',
+        alignItems: 'center',
         gap: '2px',
         cursor: readonly ? 'default' : 'pointer',
         userSelect: 'none',
@@ -45,30 +63,11 @@ export function RatingWidget({ value, onChange, readonly = false }: Props) {
         return (
           <span
             key={i}
-            style={{
-              position: 'relative',
-              display: 'inline-block',
-              width: '24px',
-              height: '24px',
-              fontSize: '24px',
-              lineHeight: '24px',
-            }}
+            style={{ display: 'inline-block', width: '24px', height: '24px' }}
             onMouseMove={(e: MouseEvent) => handleMouseMove(e, i)}
             onClick={(e: MouseEvent) => handleClick(e, i)}
           >
-            <span style={{ color: '#ddd', position: 'absolute', left: 0, top: 0 }}>&#9733;</span>
-            <span
-              style={{
-                color: '#f5a623',
-                position: 'absolute',
-                left: 0,
-                top: 0,
-                overflow: 'hidden',
-                width: `${fill * 100}%`,
-              }}
-            >
-              &#9733;
-            </span>
+            <Star fill={fill} />
           </span>
         )
       })}

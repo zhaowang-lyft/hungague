@@ -50,6 +50,12 @@ export function injectOrderRatingPanel(modalBox: HTMLElement) {
   }
   if (dishNames.length === 0) return
 
+  // Vue sets a fixed height + overflow:hidden on .v--modal-box — override both
+  // so our rating panel isn't clipped
+  modalBox.style.overflowY = 'auto'
+  modalBox.style.height = 'auto'
+  modalBox.style.maxHeight = '90vh'
+
   const container = document.createElement('div')
   container.setAttribute('data-hhr-panel', 'true')
   const modalContainer = modalBox.querySelector('.modal--container')
