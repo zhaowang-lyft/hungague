@@ -44,6 +44,26 @@ export function getDishRatings(
   return result
 }
 
+export function getAllDishRatings(
+  allOrders: Record<string, OrderRecord>,
+): Record<string, DishRating[]> {
+  const result: Record<string, DishRating[]> = {}
+  for (const order of Object.values(allOrders)) {
+    for (const [dishName, rating] of Object.entries(order.items)) {
+      if (rating.rating > 0) {
+        ;(result[dishName] ??= []).push(rating)
+      }
+    }
+  }
+  return result
+}
+
+export function getOrderRatedDishSummary(order: OrderRecord): { name: string; rating: number; comment: string }[] {
+  return Object.entries(order.items)
+    .filter(([, d]) => d.rating > 0)
+    .map(([name, d]) => ({ name, rating: d.rating, comment: d.comment }))
+}
+
 export function getDishAvgRating(ratings: DishRating[]): number {
   if (ratings.length === 0) return 0
   return ratings.reduce((sum, r) => sum + r.rating, 0) / ratings.length

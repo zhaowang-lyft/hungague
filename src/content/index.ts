@@ -4,6 +4,7 @@ import {
   cleanupOrderRatingPanel,
   injectRestaurantBadges,
   injectDishBadges,
+  injectOrderCardRatings,
 } from './injector'
 
 const INJECTED_ATTR = 'data-hhr-injected'
@@ -16,7 +17,22 @@ function isRestaurantPage(): boolean {
   return location.pathname === '/' || location.pathname.includes('/restaurant')
 }
 
-// --- Orders page: modal detection ---
+// --- Orders page: card ratings + modal detection ---
+function observeOrdersPage() {
+  injectOrderCardRatings()
+
+  // Re-inject when order list changes (pagination, filtering)
+  const orderList = document.querySelector('[data-v-435ac1cc]')
+  if (orderList) {
+    const listObserver = new MutationObserver(() => {
+      injectOrderCardRatings()
+    })
+    listObserver.observe(orderList, { childList: true, subtree: true })
+  }
+
+  observeOrderModal()
+}
+
 function observeOrderModal() {
   const observer = new MutationObserver(() => {
     const overlay = document.querySelector(SELECTORS.orderDetailModal)
@@ -101,7 +117,7 @@ function observeRouteChanges() {
 
 function init() {
   if (isOrdersPage()) {
-    observeOrderModal()
+    observeOrdersPage()
   }
   if (isRestaurantPage()) {
     observeRestaurantPage()
