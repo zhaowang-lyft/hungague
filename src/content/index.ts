@@ -11,15 +11,9 @@ const INJECTED_ATTR = 'data-hhr-injected'
 
 function refreshOrderCardRatings() {
   // Remove existing summaries so they get re-rendered with fresh data
-  document.querySelectorAll('[data-hhr-card-summary]').forEach(el => {
-    render(null, el)
-    el.remove()
-  })
+  document.querySelectorAll('[data-hhr-card-summary]').forEach(el => el.remove())
   injectOrderCardRatings()
 }
-
-// Need render for cleanup
-import { render } from 'preact'
 
 function isOrdersPage(): boolean {
   return location.pathname.includes('/orders')
@@ -30,14 +24,30 @@ function isRestaurantPage(): boolean {
 }
 
 // --- Orders page: card ratings + modal detection ---
+let ordersPageInitialized = false
+
 function observeOrdersPage() {
+  if (ordersPageInitialized) return
+  ordersPageInitialized = true
+
   injectOrderCardRatings()
 
   // Re-inject when order list changes (pagination, filtering)
+  // Use a debounce to avoid rapid-fire re-injections
+  let cardDebounce: ReturnType<typeof setTimeout> | null = null
   const orderList = document.querySelector('[data-v-435ac1cc]')
   if (orderList) {
-    const listObserver = new MutationObserver(() => {
-      injectOrderCardRatings()
+    const listObserver = new MutationObserver((mutations) => {
+      // Ignore mutations caused by our own injections
+      const isOwnMutation = mutations.every(m =>
+        [...m.addedNodes, ...m.removedNodes].every(
+          n => n instanceof HTMLElement && n.hasAttribute?.('data-hhr-card-summary')
+        )
+      )
+      if (isOwnMutation) return
+
+      if (cardDebounce) clearTimeout(cardDebounce)
+      cardDebounce = setTimeout(() => injectOrderCardRatings(), 100)
     })
     listObserver.observe(orderList, { childList: true, subtree: true })
   }
@@ -50,30 +60,21 @@ function observeOrderModal() {
     const overlay = document.querySelector(SELECTORS.orderDetailModal)
     if (!overlay) return
 
-    const modalBoxEl = overlay.querySelector(SELECTORS.orderDetailModalBox) as HTMLElement | null
-    if (!modalBoxEl) return
-    if (modalBoxEl.getAttribute(INJECTED_ATTR) === 'true') return
-    const modalBox = modalBoxEl
+    const modalBoxMaybe = overlay.querySelector(SELECTORS.orderDetailModalBox) as HTMLElement | null
+    if (!modalBoxMaybe) return
+    if (modalBoxMaybe.getAttribute(INJECTED_ATTR) === 'true') return
+    const modalBox: HTMLElement = modalBoxMaybe
 
     modalBox.setAttribute(INJECTED_ATTR, 'true')
     injectOrderRatingPanel(modalBox)
 
-    // Watch for modal removal to clean up
-    const removalObserver = new MutationObserver(() => {
-      if (!document.contains(overlay)) {
-        removalObserver.disconnect()
-      }
-    })
-    removalObserver.observe(document.body, { childList: true, subtree: true })
-
     function onModalClose() {
       cleanupOrderRatingPanel(modalBox)
-      // Re-inject order card ratings to reflect any new/updated ratings
       refreshOrderCardRatings()
     }
 
-    // Handle close button
-    const closeBtn = modalBox.querySelector(SELECTORS.modalCloseButton)
+    // Handle close button — query with 'button.close' since we're already inside .v--modal-box
+    const closeBtn = modalBox.querySelector('button.close')
     if (closeBtn) {
       closeBtn.addEventListener('click', onModalClose, { once: true })
     }
@@ -91,12 +92,25 @@ function observeOrderModal() {
         { once: true },
       )
     }
+
+    // Watch for overlay being removed OR hidden (Vue may do either)
+    const removalObserver = new MutationObserver(() => {
+      const gone = !document.contains(overlay)
+      const hidden = overlay instanceof HTMLElement &&
+        (overlay.style.display === 'none' || !overlay.offsetParent)
+      if (gone || hidden) {
+        removalObserver.disconnect()
+        refreshOrderCardRatings()
+      }
+    })
+    removalObserver.observe(document.body, { childList: true, subtree: true, attributes: true })
   })
 
   observer.observe(document.body, { childList: true, subtree: true })
 }
 
 // --- Restaurant page: badge injection ---
+let restaurantPageInitialized = false
 let menuObserverAttached = false
 
 function attachMenuObserver() {
@@ -105,9 +119,21 @@ function attachMenuObserver() {
   if (!menuEl) return
 
   menuObserverAttached = true
-  const menuObserver = new MutationObserver(() => {
-    injectRestaurantBadges()
-    injectDishBadges()
+
+  let menuDebounce: ReturnType<typeof setTimeout> | null = null
+  const menuObserver = new MutationObserver((mutations) => {
+    const isOwnMutation = mutations.every(m =>
+      [...m.addedNodes, ...m.removedNodes].every(
+        n => n instanceof HTMLElement && (n.hasAttribute?.('data-hhr-badge') || n.hasAttribute?.('data-hhr-dish-badge'))
+      )
+    )
+    if (isOwnMutation) return
+
+    if (menuDebounce) clearTimeout(menuDebounce)
+    menuDebounce = setTimeout(() => {
+      injectRestaurantBadges()
+      injectDishBadges()
+    }, 100)
   })
   menuObserver.observe(menuEl, { childList: true, subtree: true })
 
@@ -116,21 +142,23 @@ function attachMenuObserver() {
 }
 
 function observeRestaurantPage() {
-  // Initial injection for cards (always visible)
-  injectRestaurantBadges()
+  if (restaurantPageInitialized) return
+  restaurantPageInitialized = true
 
-  // Try attaching menu observer if menu already exists
+  injectRestaurantBadges()
   attachMenuObserver()
 
   // Observe body for #restaurantMenu to appear (user clicks "Order Lunch")
+  let bodyDebounce: ReturnType<typeof setTimeout> | null = null
   const bodyObserver = new MutationObserver(() => {
-    injectRestaurantBadges()
-    const menuEl = document.querySelector(SELECTORS.restaurantMenu)
-    if (menuEl) {
-      attachMenuObserver()
-      // Also inject dish badges when menu content changes after initial load
-      injectDishBadges()
-    }
+    if (bodyDebounce) clearTimeout(bodyDebounce)
+    bodyDebounce = setTimeout(() => {
+      injectRestaurantBadges()
+      if (document.querySelector(SELECTORS.restaurantMenu)) {
+        attachMenuObserver()
+        injectDishBadges()
+      }
+    }, 100)
   })
   bodyObserver.observe(document.body, { childList: true, subtree: true })
 }
@@ -141,6 +169,9 @@ function observeRouteChanges() {
   const routeObserver = new MutationObserver(() => {
     if (location.pathname !== lastPath) {
       lastPath = location.pathname
+      ordersPageInitialized = false
+      restaurantPageInitialized = false
+      menuObserverAttached = false
       init()
     }
   })
