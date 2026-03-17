@@ -6,6 +6,8 @@ import {
   injectRestaurantBadges,
   injectDishBadges,
   injectOrderCardRatings,
+  injectPriceFilter,
+  cleanupPriceFilter,
 } from './injector'
 
 const INJECTED_ATTR = 'data-hhr-injected'
@@ -125,7 +127,11 @@ function attachMenuObserver() {
   const menuObserver = new MutationObserver((mutations) => {
     const isOwnMutation = mutations.every(m =>
       [...m.addedNodes, ...m.removedNodes].every(
-        n => n instanceof HTMLElement && (n.hasAttribute?.('data-hhr-badge') || n.hasAttribute?.('data-hhr-dish-badge'))
+        n => n instanceof HTMLElement && (
+          n.hasAttribute?.('data-hhr-badge') ||
+          n.hasAttribute?.('data-hhr-dish-badge') ||
+          n.hasAttribute?.('data-hhr-price-filter')
+        )
       )
     )
     if (isOwnMutation) return
@@ -134,12 +140,14 @@ function attachMenuObserver() {
     menuDebounce = setTimeout(() => {
       injectRestaurantBadges()
       injectDishBadges()
+      injectPriceFilter()
     }, 100)
   })
   menuObserver.observe(menuEl, { childList: true, subtree: true })
 
   // Inject immediately for the current menu content
   injectDishBadges()
+  injectPriceFilter()
 }
 
 function observeRestaurantPage() {
@@ -158,6 +166,7 @@ function observeRestaurantPage() {
       if (document.querySelector(SELECTORS.restaurantMenu)) {
         attachMenuObserver()
         injectDishBadges()
+        injectPriceFilter()
       }
     }, 100)
   })

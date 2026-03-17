@@ -23,6 +23,8 @@ export const SELECTORS = {
   // Menu section
   restaurantMenu: '#restaurantMenu',
   menuItemTitle: '[data-v-4bb605de] .categoryItem--title p',
+  menuItem: 'li[data-v-4bb605de]',
+  menuItemPrice: '.price-container.item-price strong',
 
   // Orders page - order cards (list)
   orderCard: '[data-v-8831b7ec].card',

@@ -3,6 +3,7 @@ import { OrderRatingPanel } from '../components/OrderRatingPanel'
 import { RestaurantBadge } from '../components/RestaurantBadge'
 import { DishBadge } from '../components/DishBadge'
 import { OrderCardSummary } from '../components/OrderCardSummary'
+import { PriceFilter } from '../components/PriceFilter'
 import { getAllOrders } from '../storage/orders'
 import {
   getRestaurantAvgRating,
@@ -128,6 +129,64 @@ export async function injectDishBadges() {
     item.appendChild(badgeContainer)
 
     render(h(DishBadge, { ratings }), badgeContainer)
+  }
+}
+
+function parsePrice(el: Element): number | null {
+  const text = el.textContent?.trim() ?? ''
+  const match = text.match(/\$(\d+(?:\.\d+)?)/)
+  return match ? parseFloat(match[1]) : null
+}
+
+function applyPriceFilter(min: number | null, max: number | null) {
+  const menuItems = document.querySelectorAll(SELECTORS.menuItem)
+  for (const item of menuItems) {
+    const priceEl = item.querySelector(SELECTORS.menuItemPrice)
+    const li = item as HTMLElement
+    if (!priceEl) {
+      // No price (e.g. "Sold Out") — hide if any filter is active
+      li.style.display = (min !== null || max !== null) ? 'none' : ''
+      continue
+    }
+    const price = parsePrice(priceEl)
+    if (price === null) {
+      li.style.display = (min !== null || max !== null) ? 'none' : ''
+      continue
+    }
+    const aboveMin = min === null || price >= min
+    const belowMax = max === null || price <= max
+    li.style.display = (aboveMin && belowMax) ? '' : 'none'
+  }
+}
+
+export function injectPriceFilter() {
+  const menuEl = document.querySelector(SELECTORS.restaurantMenu)
+  if (!menuEl) return
+  if (menuEl.querySelector('[data-hhr-price-filter]')) return
+
+  const container = document.createElement('div')
+  container.setAttribute('data-hhr-price-filter', 'true')
+  menuEl.insertBefore(container, menuEl.firstChild)
+
+  render(
+    h(PriceFilter, {
+      onFilterChange: (min: number | null, max: number | null) => {
+        applyPriceFilter(min, max)
+      },
+    }),
+    container,
+  )
+}
+
+export function cleanupPriceFilter() {
+  document.querySelectorAll('[data-hhr-price-filter]').forEach(el => {
+    render(null, el)
+    el.remove()
+  })
+  // Restore visibility on all menu items
+  const menuItems = document.querySelectorAll(SELECTORS.menuItem)
+  for (const item of menuItems) {
+    (item as HTMLElement).style.display = ''
   }
 }
 
