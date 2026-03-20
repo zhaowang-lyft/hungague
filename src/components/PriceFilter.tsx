@@ -92,6 +92,21 @@ export function PriceFilter({ onFilterChange }: Props) {
       >
         Filter
       </button>
+      <button
+        onClick={() => {
+          setMin('')
+          setMax('20')
+          onFilterChange(null, 20)
+        }}
+        style={{
+          ...btnStyle,
+          backgroundColor: '#e8f5e9',
+          color: '#2e7d32',
+          border: '1px solid #a5d6a7',
+        }}
+      >
+        Within Budget
+      </button>
       {(min !== '' || max !== '') && (
         <button
           onClick={clear}
