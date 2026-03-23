@@ -4,6 +4,8 @@ import { RestaurantBadge } from '../components/RestaurantBadge'
 import { DishBadge } from '../components/DishBadge'
 import { OrderCardSummary } from '../components/OrderCardSummary'
 import { PriceFilter } from '../components/PriceFilter'
+import { GoogleRatingBadge } from '../components/GoogleRatingBadge'
+import googleData from '../data/restaurants.json'
 import { getAllOrders } from '../storage/orders'
 import {
   getRestaurantAvgRating,
@@ -18,7 +20,7 @@ import { SELECTORS } from './selectors'
 
 function getCleanText(el: Element): string {
   const clone = el.cloneNode(true) as Element
-  clone.querySelectorAll('[data-hhr-badge], [data-hhr-dish-badge]').forEach(b => b.remove())
+  clone.querySelectorAll('[data-hhr-badge], [data-hhr-dish-badge], [data-hhr-google-badge]').forEach(b => b.remove())
   return clone.textContent?.trim() ?? ''
 }
 
@@ -103,6 +105,40 @@ export async function injectRestaurantBadges() {
     titleEl.appendChild(badgeContainer)
 
     render(h(RestaurantBadge, { avgRating: avg, orderCount: count }), badgeContainer)
+  }
+}
+
+const googleRestaurants = googleData as Record<string, {
+  googleRating: number | null
+  reviewCount: number
+  googleMapsUrl: string | null
+  distanceKm: number | null
+}>
+
+export function injectGoogleBadges() {
+  const cards = document.querySelectorAll(SELECTORS.restaurantCards)
+
+  for (const card of cards) {
+    const titleEl = card.querySelector('h5.restaurant-title') as HTMLElement | null
+    if (!titleEl) continue
+    if (titleEl.querySelector('[data-hhr-google-badge]')) continue
+
+    const name = getCleanText(titleEl)
+    if (!name) continue
+
+    const info = googleRestaurants[name]
+    if (!info || !info.googleRating) continue
+
+    const badgeContainer = document.createElement('span')
+    badgeContainer.setAttribute('data-hhr-google-badge', 'true')
+    titleEl.appendChild(badgeContainer)
+
+    render(h(GoogleRatingBadge, {
+      googleRating: info.googleRating,
+      reviewCount: info.reviewCount,
+      googleMapsUrl: info.googleMapsUrl,
+      distanceKm: info.distanceKm,
+    }), badgeContainer)
   }
 }
 

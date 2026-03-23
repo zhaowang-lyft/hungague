@@ -1,0 +1,72 @@
+{
+  "Fast Fresh Foods": {
+    "googleRating": 4.2,
+    "reviewCount": 57,
+    "googleMapsUrl": "https://www.google.com/maps/place/?q=place_id:ChIJJQkWAhfL1IkRvvuiUzjeim8",
+    "distanceKm": 0.23,
+    "address": "199 Bay St., Toronto, ON M5L 1G5, Canada"
+  },
+  "Jimmy the Greek": {
+    "googleRating": 3.2,
+    "reviewCount": 5,
+    "googleMapsUrl": "https://www.google.com/maps/place/?q=place_id:ChIJIZpvUXvL1IkRAQEwLHHrfH4",
+    "distanceKm": 0.24,
+    "address": "199 Bay St., Toronto, ON M5L 1G5, Canada"
+  },
+  "OEB Breakfast Co.": {
+    "googleRating": 4.6,
+    "reviewCount": 1040,
+    "googleMapsUrl": "https://www.google.com/maps/place/?q=place_id:ChIJSz6jAJLL1IkRYeohrEJ9Muc",
+    "distanceKm": 0.36,
+    "address": "20 Toronto St, Toronto, ON M5C 2B8, Canada"
+  },
+  "Sukho Thai": {
+    "googleRating": 4.2,
+    "reviewCount": 3834,
+    "googleMapsUrl": "https://www.google.com/maps/place/?q=place_id:ChIJQVnt_zHL1IkRdYL-W2oVBVc",
+    "distanceKm": 0.53,
+    "address": "52 Wellington St E, Toronto, ON M5E 1E3, Canada"
+  },
+  "Gus Tacos": {
+    "googleRating": 4.1,
+    "reviewCount": 93,
+    "googleMapsUrl": "https://www.google.com/maps/place/?q=place_id:ChIJYWEcGAA1K4gROhN8p6Kzkjs",
+    "distanceKm": 1.52,
+    "address": "The Well, 486 Front St W Lower Ground Floor, Toronto, ON M5V 0V2, Canada"
+  },
+  "Kawa Sushi": {
+    "googleRating": 4.3,
+    "reviewCount": 1157,
+    "googleMapsUrl": "https://www.google.com/maps/place/?q=place_id:ChIJfRXEs0zL1IkRDwLjE62zYK8",
+    "distanceKm": 1.55,
+    "address": "451 Church St Unit 2, Toronto, ON M4Y 2C5, Canada"
+  },
+  "The Burgernator": {
+    "googleRating": 4.4,
+    "reviewCount": 3127,
+    "googleMapsUrl": "https://www.google.com/maps/place/?q=place_id:ChIJpy8FA8I0K4gRrnthsBbx544",
+    "distanceKm": 1.82,
+    "address": "269 Augusta Ave, Toronto, ON M5T 2M1, Canada"
+  },
+  "Atelier Pasta": {
+    "googleRating": 4.6,
+    "reviewCount": 423,
+    "googleMapsUrl": "https://www.google.com/maps/place/?q=place_id:ChIJ70i_bCM1K4gR41IuYSKwsW4",
+    "distanceKm": 1.85,
+    "address": "167 Bathurst St, Toronto, ON M5V 2V3, Canada"
+  },
+  "Imm Thai Kitchen": {
+    "googleRating": 4.5,
+    "reviewCount": 1049,
+    "googleMapsUrl": "https://www.google.com/maps/place/?q=place_id:ChIJ4apmI-U1K4gR2wdcxRWZhPI",
+    "distanceKm": 2.87,
+    "address": "651 College St, Toronto, ON M6G 1B7, Canada"
+  },
+  "Hakka Wok Hei": {
+    "googleRating": 4,
+    "reviewCount": 168,
+    "googleMapsUrl": "https://www.google.com/maps/place/?q=place_id:ChIJ8-s8DdQ3K4gRHbytXlAm7Nc",
+    "distanceKm": 5.57,
+    "address": "371 Roncesvalles Ave, Toronto, ON M6R 2M8, Canada"
+  }
+}

@@ -8,6 +8,7 @@ import {
   injectOrderCardRatings,
   injectPriceFilter,
   cleanupPriceFilter,
+  injectGoogleBadges,
 } from './injector'
 
 const INJECTED_ATTR = 'data-hhr-injected'
@@ -129,6 +130,7 @@ function attachMenuObserver() {
       [...m.addedNodes, ...m.removedNodes].every(
         n => n instanceof HTMLElement && (
           n.hasAttribute?.('data-hhr-badge') ||
+          n.hasAttribute?.('data-hhr-google-badge') ||
           n.hasAttribute?.('data-hhr-dish-badge') ||
           n.hasAttribute?.('data-hhr-price-filter')
         )
@@ -139,6 +141,7 @@ function attachMenuObserver() {
     if (menuDebounce) clearTimeout(menuDebounce)
     menuDebounce = setTimeout(() => {
       injectRestaurantBadges()
+      injectGoogleBadges()
       injectDishBadges()
       injectPriceFilter()
     }, 100)
@@ -155,6 +158,7 @@ function observeRestaurantPage() {
   restaurantPageInitialized = true
 
   injectRestaurantBadges()
+  injectGoogleBadges()
   attachMenuObserver()
 
   // Observe body for #restaurantMenu to appear (user clicks "Order Lunch")
