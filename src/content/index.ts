@@ -167,6 +167,7 @@ function observeRestaurantPage() {
     if (bodyDebounce) clearTimeout(bodyDebounce)
     bodyDebounce = setTimeout(() => {
       injectRestaurantBadges()
+      injectGoogleBadges()
       if (document.querySelector(SELECTORS.restaurantMenu)) {
         attachMenuObserver()
         injectDishBadges()
