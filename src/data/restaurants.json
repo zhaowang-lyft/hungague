@@ -1,9 +1,58 @@
 {
+  "Mean Bao": {
+    "googleRating": 3.9,
+    "reviewCount": 54,
+    "googleMapsUrl": "https://www.google.com/maps/place/?q=place_id:ChIJb9VXwms1K4gR7UMJ07TlF4E",
+    "distanceKm": 0.05,
+    "address": "East Tower Concourse, 333 Bay St. Unit C16B, Toronto, ON M5H 2R2, Canada"
+  },
+  "Freshii": {
+    "googleRating": 3.2,
+    "reviewCount": 44,
+    "googleMapsUrl": "https://www.google.com/maps/place/?q=place_id:ChIJsyenpTLL1IkR4fPhr6qg0cA",
+    "distanceKm": 0.14,
+    "address": "40 King St W, Toronto, ON M5H 3Y2, Canada"
+  },
+  "Flock": {
+    "googleRating": 2.5,
+    "reviewCount": 13,
+    "googleMapsUrl": "https://www.google.com/maps/place/?q=place_id:ChIJk76_I3TL1IkRzEYonH0EWGw",
+    "distanceKm": 0.17,
+    "address": "40 King St W, Toronto, ON M5H 1H1, Canada"
+  },
+  "Kupfert & Kim Lunch": {
+    "googleRating": 4.4,
+    "reviewCount": 215,
+    "googleMapsUrl": "https://www.google.com/maps/place/?q=place_id:ChIJCQfekzLL1IkRfbmoDnT21Uo",
+    "distanceKm": 0.18,
+    "address": "First Canadian Place, Concourse Level, 100 King St W, Toronto, ON M5X 1H3, Canada"
+  },
+  "Market Street Catch": {
+    "googleRating": 4.1,
+    "reviewCount": 39,
+    "googleMapsUrl": "https://www.google.com/maps/place/?q=place_id:ChIJK0OGEBXL1IkRoBaRhnu7Ouo",
+    "distanceKm": 0.2,
+    "address": "100 Yonge St, Toronto, ON M5C 2Y6, Canada"
+  },
   "Fast Fresh Foods": {
     "googleRating": 4.2,
     "reviewCount": 57,
     "googleMapsUrl": "https://www.google.com/maps/place/?q=place_id:ChIJJQkWAhfL1IkRvvuiUzjeim8",
     "distanceKm": 0.23,
+    "address": "199 Bay St., Toronto, ON M5L 1G5, Canada"
+  },
+  "Cafe Plenty": {
+    "googleRating": 4.5,
+    "reviewCount": 32,
+    "googleMapsUrl": "https://www.google.com/maps/place/?q=place_id:ChIJBYdj5bfL1IkRcJfgYE5nUEY",
+    "distanceKm": 0.24,
+    "address": "PATH, Commerce Court Food Court, 199 Bay St. Unit C-14, Toronto, ON M5L 2G9, Canada"
+  },
+  "ImPerfect Fresh Eats": {
+    "googleRating": 4.3,
+    "reviewCount": 60,
+    "googleMapsUrl": "https://www.google.com/maps/place/?q=place_id:ChIJ_YJYdn_L1IkRCe9WJxIYX2Y",
+    "distanceKm": 0.24,
     "address": "199 Bay St., Toronto, ON M5L 1G5, Canada"
   },
   "Jimmy the Greek": {
@@ -13,12 +62,82 @@
     "distanceKm": 0.24,
     "address": "199 Bay St., Toronto, ON M5L 1G5, Canada"
   },
+  "Koha Pacific Kitchen": {
+    "googleRating": 4.3,
+    "reviewCount": 231,
+    "googleMapsUrl": "https://www.google.com/maps/place/?q=place_id:ChIJSykIRS3L1IkRvBatOUih4b0",
+    "distanceKm": 0.24,
+    "address": "199 Bay St., Toronto, ON M5L 1G5, Canada"
+  },
+  "Pokito": {
+    "googleRating": 4.5,
+    "reviewCount": 59,
+    "googleMapsUrl": "https://www.google.com/maps/place/?q=place_id:ChIJSfrZidk1K4gRogk8eOH9o_Q",
+    "distanceKm": 0.24,
+    "address": "111 Richmond St W, Toronto, ON M5H 2G4, Canada"
+  },
+  "Sushi Shop": {
+    "googleRating": 3.6,
+    "reviewCount": 64,
+    "googleMapsUrl": "https://www.google.com/maps/place/?q=place_id:ChIJaRMRXtI0K4gRs1X1f5yYt3c",
+    "distanceKm": 0.25,
+    "address": "130 King St W Concourse Level, Toronto, ON M5X 2A2, Canada"
+  },
+  "Wat Ah Jerk": {
+    "googleRating": 4.7,
+    "reviewCount": 102,
+    "googleMapsUrl": "https://www.google.com/maps/place/?q=place_id:ChIJAY_AvUs1K4gR969oCyEung0",
+    "distanceKm": 0.35,
+    "address": "100 Wellington St W, Toronto, ON M5J 2R2, Canada"
+  },
+  "Eat Canteen": {
+    "googleRating": 3.8,
+    "reviewCount": 77,
+    "googleMapsUrl": "https://www.google.com/maps/place/?q=place_id:ChIJ8UYj_9I0K4gRPZPC7msuYps",
+    "distanceKm": 0.36,
+    "address": "66 Wellington St W, Toronto, ON M5K 1A1, Canada"
+  },
   "OEB Breakfast Co.": {
     "googleRating": 4.6,
-    "reviewCount": 1040,
+    "reviewCount": 1046,
     "googleMapsUrl": "https://www.google.com/maps/place/?q=place_id:ChIJSz6jAJLL1IkRYeohrEJ9Muc",
     "distanceKm": 0.36,
     "address": "20 Toronto St, Toronto, ON M5C 2B8, Canada"
+  },
+  "Basil Box": {
+    "googleRating": 4.7,
+    "reviewCount": 189,
+    "googleMapsUrl": "https://www.google.com/maps/place/?q=place_id:ChIJr_1SbmbL1IkR2S0Lt8LFowo",
+    "distanceKm": 0.39,
+    "address": "200 Bay Street, Unit LC-F1, Toronto, ON M5J 2J2, Canada"
+  },
+  "Sultans Mediterranean Grill": {
+    "googleRating": 4.6,
+    "reviewCount": 191,
+    "googleMapsUrl": "https://www.google.com/maps/place/?q=place_id:ChIJg-LwN9nL1IkR5cvqSLZKfE8",
+    "distanceKm": 0.39,
+    "address": "200 Bay St. Unit F4, Toronto, ON M5J 2T6, Canada"
+  },
+  "Doughbox Wood Fired Pizza and Pasta": {
+    "googleRating": 4.5,
+    "reviewCount": 937,
+    "googleMapsUrl": "https://www.google.com/maps/place/?q=place_id:ChIJmWdYAHw1K4gRcqs8EARr7iY",
+    "distanceKm": 0.52,
+    "address": "40 University Ave Unit 7, Toronto, ON M5J 1T1, Canada"
+  },
+  "Gyuki": {
+    "googleRating": 4.6,
+    "reviewCount": 2817,
+    "googleMapsUrl": "https://www.google.com/maps/place/?q=place_id:ChIJcV3-2DPL1IkRGvJedb43ijU",
+    "distanceKm": 0.52,
+    "address": "81 Church St, Toronto, ON M5C 2G2, Canada"
+  },
+  "AAamazing Salad": {
+    "googleRating": 4.7,
+    "reviewCount": 242,
+    "googleMapsUrl": "https://www.google.com/maps/place/?q=place_id:ChIJl4x91MM0K4gRaNOZCW5_gMk",
+    "distanceKm": 0.53,
+    "address": "82 Adelaide St E unit c, Toronto, ON M5C 2R7, Canada"
   },
   "Sukho Thai": {
     "googleRating": 4.2,
@@ -26,6 +145,139 @@
     "googleMapsUrl": "https://www.google.com/maps/place/?q=place_id:ChIJQVnt_zHL1IkRdYL-W2oVBVc",
     "distanceKm": 0.53,
     "address": "52 Wellington St E, Toronto, ON M5E 1E3, Canada"
+  },
+  "Loaded Pierogi": {
+    "googleRating": 4.1,
+    "reviewCount": 403,
+    "googleMapsUrl": "https://www.google.com/maps/place/?q=place_id:ChIJI0dAIm81K4gRRF-8MbW_GF0",
+    "distanceKm": 0.62,
+    "address": "65 Front St W, Toronto, ON M5J 2P1, Canada"
+  },
+  "Aloette Go": {
+    "googleRating": 4,
+    "reviewCount": 32,
+    "googleMapsUrl": "https://www.google.com/maps/place/?q=place_id:ChIJb_ZZBsHL1IkRYiQtJ6ySrIg",
+    "distanceKm": 0.72,
+    "address": "Fourth Floor, 81 Bay St. Kiosk 1, Toronto, ON M5J 1E6, Canada"
+  },
+  "Friday Burger Company Lunch": {
+    "googleRating": 4.4,
+    "reviewCount": 285,
+    "googleMapsUrl": "https://www.google.com/maps/place/?q=place_id:ChIJG4kE2lPL1IkRkt2TI7sVdUY",
+    "distanceKm": 0.73,
+    "address": "81 Bay St. 4th Floor, (Kiosk 8, Toronto, ON M5J 0E7, Canada"
+  },
+  "Naan Kabob": {
+    "googleRating": 4.8,
+    "reviewCount": 2145,
+    "googleMapsUrl": "https://www.google.com/maps/place/?q=place_id:ChIJxb16ykI1K4gRUH_qyzy5CxY",
+    "distanceKm": 0.77,
+    "address": "240 Queen St W, Toronto, ON M5V 1Z7, Canada"
+  },
+  "Saigon Sandwiches": {
+    "googleRating": 4.4,
+    "reviewCount": 2063,
+    "googleMapsUrl": "https://www.google.com/maps/place/?q=place_id:ChIJyRlRaLU0K4gRatGG_keAqsM",
+    "distanceKm": 0.78,
+    "address": "329 Yonge St, Toronto, ON M5B 1R7, Canada"
+  },
+  "Uno Mustachio": {
+    "googleRating": 4.4,
+    "reviewCount": 413,
+    "googleMapsUrl": "https://www.google.com/maps/place/?q=place_id:ChIJu3qb1y_L1IkRUCW9c9uC14U",
+    "distanceKm": 0.79,
+    "address": "Market, 95 Front St E, Toronto, ON M5E 1M6, Canada"
+  },
+  "Fox On John": {
+    "googleRating": 4.6,
+    "reviewCount": 11448,
+    "googleMapsUrl": "https://www.google.com/maps/place/?q=place_id:ChIJe666YNA0K4gRgPfziT7HLp0",
+    "distanceKm": 0.81,
+    "address": "106 John St #3, Toronto, ON M5V 2E1, Canada"
+  },
+  "Bbq Chicken": {
+    "googleRating": 4.7,
+    "reviewCount": 1532,
+    "googleMapsUrl": "https://www.google.com/maps/place/?q=place_id:ChIJuV9gq1k1K4gRtd4xAJscdzg",
+    "distanceKm": 0.83,
+    "address": "43 Elm St, Toronto, ON M5G 1H1, Canada"
+  },
+  "Thai Room": {
+    "googleRating": 4.6,
+    "reviewCount": 121,
+    "googleMapsUrl": "https://www.google.com/maps/place/?q=place_id:ChIJ_d3lC9Y1K4gR2RFRdRMELYc",
+    "distanceKm": 0.85,
+    "address": "303 King St W, Toronto, ON M5V 1J5, Canada"
+  },
+  "NaiNai Indonesian": {
+    "googleRating": 4.8,
+    "reviewCount": 712,
+    "googleMapsUrl": "https://www.google.com/maps/place/?q=place_id:ChIJkbCRXjk1K4gRllVlGoQd4IY",
+    "distanceKm": 0.88,
+    "address": "Village by The Grange (inside the Food Court, 109 McCaul St #20, Toronto, ON M5T 3K5, Canada"
+  },
+  "Bold Bites Co.": {
+    "googleRating": 4.5,
+    "reviewCount": 284,
+    "googleMapsUrl": "https://www.google.com/maps/place/?q=place_id:ChIJ3WsPAWHL1IkRisWSn3jpsBw",
+    "distanceKm": 0.99,
+    "address": "294 Richmond St E #102, Toronto, ON M5A 1P5, Canada"
+  },
+  "Bread and Bowl": {
+    "googleRating": 4.3,
+    "reviewCount": 251,
+    "googleMapsUrl": "https://www.google.com/maps/place/?q=place_id:ChIJmfO4dMg0K4gRJgYqZLNa3XM",
+    "distanceKm": 1.05,
+    "address": "2 Murray St, Toronto, ON M5G 1X5, Canada"
+  },
+  "Cheffrys Artisanal Bistro": {
+    "googleRating": 4.7,
+    "reviewCount": 1214,
+    "googleMapsUrl": "https://www.google.com/maps/place/?q=place_id:ChIJ7eUebn41K4gRKNeYVklBLM8",
+    "distanceKm": 1.14,
+    "address": "388 Richmond St W, Toronto, ON M5V 1X6, Canada"
+  },
+  "Cafe Montaigne": {
+    "googleRating": 4.4,
+    "reviewCount": 92,
+    "googleMapsUrl": "https://www.google.com/maps/place/?q=place_id:ChIJ3XxBNgA1K4gRGyYCNSJ4_eY",
+    "distanceKm": 1.17,
+    "address": "394 Richmond St W, Toronto, ON M5V 1X6, Canada"
+  },
+  "Light Cafe": {
+    "googleRating": 4.2,
+    "reviewCount": 1485,
+    "googleMapsUrl": "https://www.google.com/maps/place/?q=place_id:ChIJq6ouFcY0K4gRsJLACJqy2J4",
+    "distanceKm": 1.17,
+    "address": "23 Baldwin Street - Floor Unit, Toronto, ON M5T 1L1, Canada"
+  },
+  "Salus Fresh Foods": {
+    "googleRating": 4,
+    "reviewCount": 165,
+    "googleMapsUrl": "https://www.google.com/maps/place/?q=place_id:ChIJv0aV37Q0K4gR4lZIf3GL124",
+    "distanceKm": 1.19,
+    "address": "777 Bay St., Toronto, ON M5G 2E5, Canada"
+  },
+  "Banh Mi Vietsub": {
+    "googleRating": 4.9,
+    "reviewCount": 132,
+    "googleMapsUrl": "https://www.google.com/maps/place/?q=place_id:ChIJscVIAQA1K4gR3NERSWfNZCI",
+    "distanceKm": 1.37,
+    "address": "493A Dundas St W, Toronto, ON M5T 1H1, Canada"
+  },
+  "Chen Chen's Nashville Hot Chicken": {
+    "googleRating": 4.5,
+    "reviewCount": 1038,
+    "googleMapsUrl": "https://www.google.com/maps/place/?q=place_id:ChIJewUkuVw1K4gR_ainA-6KroE",
+    "distanceKm": 1.47,
+    "address": "Wellington Market, 486 Front St W, Toronto, ON M5V 0V2, Canada"
+  },
+  "Au Pain Dorè": {
+    "googleRating": 4.5,
+    "reviewCount": 239,
+    "googleMapsUrl": "https://www.google.com/maps/place/?q=place_id:ChIJ8_bWbSU1K4gR3nMsTCM_J6A",
+    "distanceKm": 1.48,
+    "address": "879 Bay St., Toronto, ON M5S 3K6, Canada"
   },
   "Gus Tacos": {
     "googleRating": 4.1,
@@ -41,6 +293,20 @@
     "distanceKm": 1.55,
     "address": "451 Church St Unit 2, Toronto, ON M4Y 2C5, Canada"
   },
+  "Big Smoke Burger": {
+    "googleRating": 4.5,
+    "reviewCount": 1298,
+    "googleMapsUrl": "https://www.google.com/maps/place/?q=place_id:ChIJoXLNo8s0K4gRVMPR34DFEoU",
+    "distanceKm": 1.62,
+    "address": "573 King St W, Toronto, ON M5V 1M1, Canada"
+  },
+  "Sambucas On Church": {
+    "googleRating": 4.5,
+    "reviewCount": 985,
+    "googleMapsUrl": "https://www.google.com/maps/place/?q=place_id:ChIJJZ29LbM0K4gRKSHw5u_fRG4",
+    "distanceKm": 1.68,
+    "address": "489 Church St, Toronto, ON M4Y 2C6, Canada"
+  },
   "The Burgernator": {
     "googleRating": 4.4,
     "reviewCount": 3127,
@@ -55,18 +321,228 @@
     "distanceKm": 1.85,
     "address": "167 Bathurst St, Toronto, ON M5V 2V3, Canada"
   },
+  "Storm Crow Manor": {
+    "googleRating": 4.6,
+    "reviewCount": 4648,
+    "googleMapsUrl": "https://www.google.com/maps/place/?q=place_id:ChIJG7aLx3I1K4gRF9rPuUHvE-c",
+    "distanceKm": 1.87,
+    "address": "580 Church St, Toronto, ON M4Y 2E5, Canada"
+  },
+  "New Yorker Deli Lunch": {
+    "googleRating": 4.1,
+    "reviewCount": 417,
+    "googleMapsUrl": "https://www.google.com/maps/place/?q=place_id:ChIJSWP0LLA0K4gRvhQw66OLWl8",
+    "distanceKm": 2.15,
+    "address": "1140 Bay St., Toronto, ON M5S 2B4, Canada"
+  },
+  "Koh Samui": {
+    "googleRating": 3.9,
+    "reviewCount": 284,
+    "googleMapsUrl": "https://www.google.com/maps/place/?q=place_id:ChIJq6x38Ho1K4gRKppr12N6uL8",
+    "distanceKm": 2.22,
+    "address": "791 King St W, Toronto, ON M5V 1N4, Canada"
+  },
+  "Migente Cocina": {
+    "googleRating": 4.3,
+    "reviewCount": 160,
+    "googleMapsUrl": "https://www.google.com/maps/place/?q=place_id:ChIJW6rKq0PL1IkRRP_HzCAYK-A",
+    "distanceKm": 2.25,
+    "address": "823 Dundas St W, Toronto, ON M6J 1V4, Canada"
+  },
+  "Randy's Roti": {
+    "googleRating": 3.8,
+    "reviewCount": 713,
+    "googleMapsUrl": "https://www.google.com/maps/place/?q=place_id:ChIJm8J1xK40K4gRGyK1vmbcB1Q",
+    "distanceKm": 2.56,
+    "address": "876 Yonge St, Toronto, ON M4W 2J1, Canada"
+  },
+  "Scotty Bons": {
+    "googleRating": 4.4,
+    "reviewCount": 835,
+    "googleMapsUrl": "https://www.google.com/maps/place/?q=place_id:ChIJdciDzBI1K4gRbWlIzVBd1eo",
+    "distanceKm": 2.79,
+    "address": "402 Bloor St W, Toronto, ON M5S 1X5, Canada"
+  },
+  "EatBKK": {
+    "googleRating": 4.7,
+    "reviewCount": 2092,
+    "googleMapsUrl": "https://www.google.com/maps/place/?q=place_id:ChIJd-TboWo1K4gRe3XhqIQAwFw",
+    "distanceKm": 2.82,
+    "address": "513 Bloor St W, Toronto, ON M5S 1Y4, Canada"
+  },
   "Imm Thai Kitchen": {
     "googleRating": 4.5,
-    "reviewCount": 1049,
+    "reviewCount": 1050,
     "googleMapsUrl": "https://www.google.com/maps/place/?q=place_id:ChIJ4apmI-U1K4gR2wdcxRWZhPI",
     "distanceKm": 2.87,
     "address": "651 College St, Toronto, ON M6G 1B7, Canada"
   },
+  "Rustle and Still Cafe": {
+    "googleRating": 4.7,
+    "reviewCount": 1021,
+    "googleMapsUrl": "https://www.google.com/maps/place/?q=place_id:ChIJaeZIb5I0K4gRqR8RPLjW1qo",
+    "distanceKm": 3.05,
+    "address": "605 Bloor St W, Toronto, ON M6G 1K6, Canada"
+  },
+  "Black Camel": {
+    "googleRating": 4.6,
+    "reviewCount": 1467,
+    "googleMapsUrl": "https://www.google.com/maps/place/?q=place_id:ChIJubxTSKg0K4gR_tujacq1eEQ",
+    "distanceKm": 3.09,
+    "address": "4 Crescent Rd, Toronto, ON M4W 1S9, Canada"
+  },
+  "MiMi Vietnamese Restaurant": {
+    "googleRating": 4.6,
+    "reviewCount": 856,
+    "googleMapsUrl": "https://www.google.com/maps/place/?q=place_id:ChIJudduC2XL1IkRZtM0WAEjZh8",
+    "distanceKm": 3.14,
+    "address": "686A Gerrard St E, Toronto, ON M4M 1Y3, Canada"
+  },
+  "The Biryaniwalla": {
+    "googleRating": 4.3,
+    "reviewCount": 1300,
+    "googleMapsUrl": "https://www.google.com/maps/place/?q=place_id:ChIJkbOLkAk1K4gRSJErQBPqOXc",
+    "distanceKm": 3.15,
+    "address": "643 Bloor St W A, Toronto, ON M6G 1L1, Canada"
+  },
+  "Chiang Mai Thai Kitchen": {
+    "googleRating": 4.6,
+    "reviewCount": 2087,
+    "googleMapsUrl": "https://www.google.com/maps/place/?q=place_id:ChIJYwH_c7Y1K4gRNIoE81lSDNE",
+    "distanceKm": 3.23,
+    "address": "171 E Liberty St Unit 144, Toronto, ON M6K 3K4, Canada"
+  },
+  "Casa Tropical": {
+    "googleRating": 4.8,
+    "reviewCount": 728,
+    "googleMapsUrl": "https://www.google.com/maps/place/?q=place_id:ChIJ4WbjGBQ1K4gRCgdd9EPioJE",
+    "distanceKm": 3.24,
+    "address": "774 College St, Toronto, ON M6G 1C6, Canada"
+  },
+  "Liberty Eats": {
+    "googleRating": 4.7,
+    "reviewCount": 708,
+    "googleMapsUrl": "https://www.google.com/maps/place/?q=place_id:ChIJfTxmfvg1K4gRlwBZJaN62CQ",
+    "distanceKm": 3.48,
+    "address": "129 Jefferson Ave, Toronto, ON M6K 3E4, Canada"
+  },
+  "Liberty Village Market & Cafe": {
+    "googleRating": 4.5,
+    "reviewCount": 390,
+    "googleMapsUrl": "https://www.google.com/maps/place/?q=place_id:ChIJofWRyAY1K4gR6ZcCF39zLNc",
+    "distanceKm": 3.51,
+    "address": "65 Jefferson Ave, Toronto, ON M6K 1X8, Canada"
+  },
+  "Shawarma Moose": {
+    "googleRating": 4.5,
+    "reviewCount": 719,
+    "googleMapsUrl": "https://www.google.com/maps/place/?q=place_id:ChIJUyWTOjc1K4gRXpy_bH_bSxE",
+    "distanceKm": 3.62,
+    "address": "898 College St, Toronto, ON M6H 1A4, Canada"
+  },
+  "The Real Jerk": {
+    "googleRating": 4.1,
+    "reviewCount": 2605,
+    "googleMapsUrl": "https://www.google.com/maps/place/?q=place_id:ChIJE65uTGzL1IkR91apw-De1hk",
+    "distanceKm": 3.62,
+    "address": "842 Gerrard St E, Toronto, ON M4M 1Y7, Canada"
+  },
+  "Megumi Mazesoba": {
+    "googleRating": 4.8,
+    "reviewCount": 622,
+    "googleMapsUrl": "https://www.google.com/maps/place/?q=place_id:ChIJ-YrPN4IzK4gRWw1_LktdrtQ",
+    "distanceKm": 4.39,
+    "address": "46 St Clair Ave E #101, Toronto, ON M4T 1M9, Canada"
+  },
+  "Alis West Indian": {
+    "googleRating": 4.4,
+    "reviewCount": 1120,
+    "googleMapsUrl": "https://www.google.com/maps/place/?q=place_id:ChIJ95D_8a01K4gRxjaXCHfoflw",
+    "distanceKm": 4.54,
+    "address": "1446 Queen St W, Toronto, ON M6K 1M2, Canada"
+  },
+  "Danforth Dragon": {
+    "googleRating": 4.2,
+    "reviewCount": 431,
+    "googleMapsUrl": "https://www.google.com/maps/place/?q=place_id:ChIJJ8MRlIbM1IkR9fweGuWGhoE",
+    "distanceKm": 4.68,
+    "address": "861 Danforth Ave, Toronto, ON M4J 1L8, Canada"
+  },
+  "Goat Coffee Co": {
+    "googleRating": 4.4,
+    "reviewCount": 606,
+    "googleMapsUrl": "https://www.google.com/maps/place/?q=place_id:ChIJg5NfHJDM1IkRJBw7ybmmwng",
+    "distanceKm": 4.72,
+    "address": "893 Pape Ave, East York, ON M4K 3V1, Canada"
+  },
+  "Tacos Moras": {
+    "googleRating": 4.4,
+    "reviewCount": 635,
+    "googleMapsUrl": "https://www.google.com/maps/place/?q=place_id:ChIJH59kvpAzK4gRLcNVuBSS3sM",
+    "distanceKm": 4.82,
+    "address": "547 St Clair Ave W, Toronto, ON M6C 1A3, Canada"
+  },
+  "Dirty Birria": {
+    "googleRating": 4.8,
+    "reviewCount": 463,
+    "googleMapsUrl": "https://www.google.com/maps/place/?q=place_id:ChIJ50iHxenL1IkRpVZmHbjk-nY",
+    "distanceKm": 5.48,
+    "address": "1610 Queen St E, Toronto, ON M4L 1G2, Canada"
+  },
   "Hakka Wok Hei": {
     "googleRating": 4,
-    "reviewCount": 168,
+    "reviewCount": 170,
     "googleMapsUrl": "https://www.google.com/maps/place/?q=place_id:ChIJ8-s8DdQ3K4gRHbytXlAm7Nc",
     "distanceKm": 5.57,
     "address": "371 Roncesvalles Ave, Toronto, ON M6R 2M8, Canada"
+  },
+  "Casa di Giorgio": {
+    "googleRating": 4.1,
+    "reviewCount": 675,
+    "googleMapsUrl": "https://www.google.com/maps/place/?q=place_id:ChIJGX8wfIvL1IkRRHesq8SjrIQ",
+    "distanceKm": 5.61,
+    "address": "1646 Queen St E, Toronto, ON M4L 1G3, Canada"
+  },
+  "Pomarosa": {
+    "googleRating": 4.7,
+    "reviewCount": 839,
+    "googleMapsUrl": "https://www.google.com/maps/place/?q=place_id:ChIJTeJqa2XM1IkRDqaX5qFNc3U",
+    "distanceKm": 5.8,
+    "address": "1504 Danforth Ave, Toronto, ON M4J 1N4, Canada"
+  },
+  "Kadak": {
+    "googleRating": 4.7,
+    "reviewCount": 504,
+    "googleMapsUrl": "https://www.google.com/maps/place/?q=place_id:ChIJb40tfQAzK4gRFIfztKUYeVc",
+    "distanceKm": 5.96,
+    "address": "2088 Yonge St, Toronto, ON M4S 2A3, Canada"
+  },
+  "Knuckle Sandwich": {
+    "googleRating": 4.4,
+    "reviewCount": 710,
+    "googleMapsUrl": "https://www.google.com/maps/place/?q=place_id:ChIJxWdoCFzM1IkRRB0iUzHuClI",
+    "distanceKm": 6.65,
+    "address": "969 Coxwell Ave, East York, ON M4C 3G5, Canada"
+  },
+  "Mooring Eats": {
+    "googleRating": 4.7,
+    "reviewCount": 1267,
+    "googleMapsUrl": "https://www.google.com/maps/place/?q=place_id:ChIJPbZ7iug3K4gRQgA9cUbqpJU",
+    "distanceKm": 9.62,
+    "address": "2481 Lake Shore Blvd W, Etobicoke, ON M8V 1C5, Canada"
+  },
+  "Krystos Modern Greek": {
+    "googleRating": 4.3,
+    "reviewCount": 1369,
+    "googleMapsUrl": "https://www.google.com/maps/place/?q=place_id:ChIJCdQNNMwzK4gRiSJQxfGJJq8",
+    "distanceKm": 9.74,
+    "address": "3200 Dufferin St, North York, ON M6A 3B2, Canada"
+  },
+  "Flaming Stove": {
+    "googleRating": 4.7,
+    "reviewCount": 633,
+    "googleMapsUrl": "https://www.google.com/maps/place/?q=place_id:ChIJ7ZqGQ8rTKogRvpXlVEp0tpc",
+    "distanceKm": 44.27,
+    "address": "869 Mulock Dr, Newmarket, ON L3Y 8S3, Canada"
   }
 }

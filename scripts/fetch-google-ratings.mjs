@@ -8,14 +8,28 @@
  * Or set the key in the GOOGLE_PLACES_API_KEY constant below.
  */
 
-import { writeFileSync, mkdirSync } from 'fs'
+import { readFileSync, writeFileSync, mkdirSync, existsSync } from 'fs'
 import { join, dirname } from 'path'
 import { fileURLToPath } from 'url'
 
 // ── Configuration ────────────────────────────────────────────────────────────
 
-/** Google Places API key. Set here or via GOOGLE_PLACES_API_KEY env var. */
-const GOOGLE_PLACES_API_KEY = process.env.GOOGLE_PLACES_API_KEY || 'AIzaSyBITc5uwpO7XwwqYAs1HefggjVhaWX_3Ac'
+const __dirname = dirname(fileURLToPath(import.meta.url))
+const ROOT = join(__dirname, '..')
+
+/** Load .env file if present */
+const envPath = join(ROOT, '.env')
+if (existsSync(envPath)) {
+  for (const line of readFileSync(envPath, 'utf-8').split('\n')) {
+    const match = line.match(/^\s*([^#=]+?)\s*=\s*(.*)\s*$/)
+    if (match && !process.env[match[1]]) {
+      process.env[match[1]] = match[2]
+    }
+  }
+}
+
+/** Google Places API key. Loaded from .env or environment. */
+const GOOGLE_PLACES_API_KEY = process.env.GOOGLE_PLACES_API_KEY || ''
 
 /** Office location (lat, lng) — used for distance calculation. */
 const OFFICE_LAT = 43.6500 // TODO: replace with your office latitude
@@ -27,22 +41,89 @@ const OFFICE_SEARCH_HINT = 'near 357 Bay Street, Toronto, ON'
  * Update this list as new restaurants appear on HungerHub.
  */
 const RESTAURANTS = [
+  'AAamazing Salad',
+  'Alis West Indian',
+  'Aloette Go',
   'Atelier Pasta',
+  'Au Pain Dorè',
+  'Banh Mi Vietsub',
+  'Basil Box',
+  'Bbq Chicken',
+  'Big Smoke Burger',
+  'Black Camel',
+  'Bold Bites Co.',
+  'Bread and Bowl',
+  'Cafe Montaigne',
+  'Cafe Plenty',
+  'Casa Tropical',
+  'Casa di Giorgio',
+  'Cheffrys Artisanal Bistro',
+  "Chen Chen's Nashville Hot Chicken",
+  'Chiang Mai Thai Kitchen',
+  'Danforth Dragon',
+  'Dirty Birria',
+  'Doughbox Wood Fired Pizza and Pasta',
+  'Eat Canteen',
+  'EatBKK',
   'Fast Fresh Foods',
+  'Flaming Stove',
+  'Flock',
+  'Fox On John',
+  'Freshii',
+  'Friday Burger Company Lunch',
+  'Goat Coffee Co',
   'Gus Tacos',
+  'Gyuki',
   'Hakka Wok Hei',
+  'ImPerfect Fresh Eats',
   'Imm Thai Kitchen',
   'Jimmy the Greek',
+  'Kadak',
+  'Kawa Sushi',
+  'Knuckle Sandwich',
+  'Koh Samui',
+  'Koha Pacific Kitchen',
+  'Krystos Modern Greek',
+  'Kupfert & Kim Lunch',
+  'Liberty Eats',
+  'Liberty Village Market & Cafe',
+  'Light Cafe',
+  'Loaded Pierogi',
+  'Market Street Catch',
+  'Mean Bao',
+  'Megumi Mazesoba',
+  'MiMi Vietnamese Restaurant',
+  'Migente Cocina',
+  'Mooring Eats',
+  'Naan Kabob',
+  'NaiNai Indonesian',
+  'New Yorker Deli Lunch',
   'OEB Breakfast Co.',
-  'The Burgernator',
+  'Pokito',
+  'Pomarosa',
+  "Randy's Roti",
+  'Rustle and Still Cafe',
+  'Saigon Sandwiches',
+  'Salus Fresh Foods',
+  'Sambucas On Church',
+  'Scotty Bons',
+  'Shawarma Moose',
+  'Storm Crow Manor',
   'Sukho Thai',
-  'Kawa Sushi'
+  'Sultans Mediterranean Grill',
+  'Sushi Shop',
+  'Tacos Moras',
+  'Thai Room',
+  'The Biryaniwalla',
+  'The Burgernator',
+  'The Real Jerk',
+  'Uno Mustachio',
+  'Wat Ah Jerk',
 ]
 
 // ── Helpers ──────────────────────────────────────────────────────────────────
 
-const __dirname = dirname(fileURLToPath(import.meta.url))
-const OUTPUT_PATH = join(__dirname, '..', 'src', 'data', 'restaurants.json')
+const OUTPUT_PATH = join(ROOT, 'src', 'data', 'restaurants.json')
 
 /** Haversine distance in km between two lat/lng points. */
 function haversineKm(lat1, lng1, lat2, lng2) {
@@ -87,7 +168,7 @@ async function searchPlace(name) {
 // ── Main ─────────────────────────────────────────────────────────────────────
 
 async function main() {
-  if (GOOGLE_PLACES_API_KEY === 'YOUR_API_KEY_HERE') {
+  if (!GOOGLE_PLACES_API_KEY) {
     console.error('Error: Set GOOGLE_PLACES_API_KEY env var or edit the script.')
     process.exit(1)
   }

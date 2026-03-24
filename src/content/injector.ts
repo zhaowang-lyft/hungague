@@ -115,6 +115,12 @@ const googleRestaurants = googleData as Record<string, {
   distanceKm: number | null
 }>
 
+// Build a case-insensitive lookup map
+const googleLookup = new Map<string, (typeof googleRestaurants)[string]>()
+for (const [key, val] of Object.entries(googleRestaurants)) {
+  googleLookup.set(key.toLowerCase(), val)
+}
+
 export function injectGoogleBadges() {
   const cards = document.querySelectorAll(SELECTORS.restaurantCards)
 
@@ -126,7 +132,7 @@ export function injectGoogleBadges() {
     const name = getCleanText(titleEl)
     if (!name) continue
 
-    const info = googleRestaurants[name]
+    const info = googleLookup.get(name.toLowerCase())
     if (!info || !info.googleRating) continue
 
     const badgeContainer = document.createElement('span')
