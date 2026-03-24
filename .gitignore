@@ -4,3 +4,4 @@ claude/
 .npmrc
 .env
 .DS_Store
+.zip

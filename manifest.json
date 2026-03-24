@@ -1,6 +1,6 @@
 {
   "manifest_version": 3,
-  "name": "HungerHub Ratings",
+  "name": "Hunger Gauge",
   "version": "1.0.0",
   "description": "Rate and review dishes from your HungerHub orders",
   "permissions": ["storage"],
