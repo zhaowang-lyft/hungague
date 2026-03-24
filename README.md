@@ -1,51 +1,19 @@
-# HungerHub Ratings
+# Hunger Gauge
 
-Browser extension (Chrome, Edge, Firefox, and other Chromium browsers) that lets you rate and comment on dishes from your HungerHub orders. Ratings are stored locally via `chrome.storage.sync` and displayed as badges on the restaurant ordering page.
+A browser extension for people who order lunch on HungerHub and keep forgetting what was good.
 
-## Install & Build
+## What it does
 
-```bash
-npm install
-npm run build
-```
+- **Rate your dishes** — Open any past order, rate each dish with half-star precision, leave a note if you want.
+- **Spot your favorites on the menu** — Dishes you've rated before show their score right on the menu. No more "have I had this?"
+- **Restaurant scores** — See your average rating and order count on each restaurant card.
+- **Google ratings** — Google Places stars and review counts appear on restaurant cards for a quick sanity check on new places.
+- **Price filter** — Hide anything over budget. One-click "Within Budget" button included.
+- **Order history summary** — See what you rated without clicking into each order.
 
-## Load in Chrome / Edge / Brave
+## Privacy
 
-1. Open `chrome://extensions` (or `edge://extensions`)
-2. Enable **Developer mode** (top right toggle)
-3. Click **Load unpacked**
-4. Select the `dist/` folder
+All your data stays in the browser. Nothing leaves your machine.
 
-## Load in Firefox
-
-1. Open `about:debugging#/runtime/this-firefox`
-2. Click **Load Temporary Add-on**
-3. Select any file inside the `dist/` folder (e.g. `dist/manifest.json`)
-
-> Note: temporary add-ons are removed when Firefox restarts. For a persistent install, the extension would need to be signed via [Mozilla Add-on Hub](https://addons.mozilla.org/developers/).
-
-## Usage
-
-### Rating orders
-- Go to [uncatering.hungerhub.com/orders](https://uncatering.hungerhub.com/orders)
-- Click any order to open the detail modal
-- A **Rate Your Order** panel appears at the bottom with per-dish star ratings (half-star precision) and comment fields
-- Click **Save** to persist, **Clear** to remove
-
-### Viewing ratings
-- On the restaurant ordering page, rated restaurants show a badge next to their name (e.g. ★ 4.2 (3 orders))
-- Menu items you've rated before show their average rating and most recent comment
-
-## Development
-
-```bash
-npm run dev
-```
-
-Starts Vite in watch mode with HMR. The extension auto-reloads in Chrome when files change.
-
-## Tech Stack
-
-- TypeScript, Preact, Vite, @crxjs/vite-plugin
-- Chrome Manifest V3
-- `chrome.storage.sync` for cross-device persistence
+## For developers
+Check out the [developer guide](developer.md) for installation, development, and packaging instructions.
