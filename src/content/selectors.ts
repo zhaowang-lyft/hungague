@@ -27,7 +27,8 @@ export const SELECTORS = {
   menuItemPrice: '.price-container.item-price strong',
 
   // Orders page - order cards (list)
-  orderCard: '[data-v-8831b7ec].card',
+  // Note: data-v-* changed from 8831b7ec to d117c654; using class-only selector for resilience
+  orderCard: '.card.mb-3',
   orderCardDate: 'h5.order-date',
   orderCardRestaurantName: 'p.order-restaurant-name',
 } as const

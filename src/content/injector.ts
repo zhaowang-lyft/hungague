@@ -35,7 +35,10 @@ export function injectOrderRatingPanel(modalBox: HTMLElement) {
     if (h2.textContent?.includes('Order Date')) {
       const sibling = h2.nextElementSibling
       if (sibling) {
-        orderDate = sibling.textContent?.trim() ?? ''
+        const rawDate = sibling.textContent?.trim() ?? ''
+        // Normalize: extract YYYY-MM-DD from formats like "2026-03-27 ▪ 11:45 AM"
+        const dateMatch = rawDate.match(/\d{4}-\d{2}-\d{2}/)
+        orderDate = dateMatch ? dateMatch[0] : rawDate
       }
       break
     }
@@ -243,10 +246,13 @@ export async function injectOrderCardRatings() {
     const nameEl = card.querySelector(SELECTORS.orderCardRestaurantName)
     if (!dateEl || !nameEl) continue
 
-    const date = dateEl.textContent?.trim() ?? ''
+    const rawDate = dateEl.textContent?.trim() ?? ''
     const name = nameEl.textContent?.trim() ?? ''
-    if (!date || !name) continue
+    if (!rawDate || !name) continue
 
+    // Date format may be "2026-03-27" or "2026-03-27 ▪ 11:45 AM" — extract YYYY-MM-DD
+    const dateMatch = rawDate.match(/\d{4}-\d{2}-\d{2}/)
+    const date = dateMatch ? dateMatch[0] : rawDate
     const key = makeOrderKey(name, date)
     const order = allOrders[key]
     if (!order) continue

@@ -119,6 +119,19 @@ const RESTAURANTS = [
   'The Real Jerk',
   'Uno Mustachio',
   'Wat Ah Jerk',
+  'DoDoner',
+  'Poke Eats',
+  'Le Gourmand Cafe',
+  "Mandy's Salads ",
+  'Blue Claw',
+  'Sunshine Wholesome Market',
+  'Bevi Birra',
+  'IQ Food Co Lunch',
+  'Soulas Greek',
+  'Burgers n Fries Forever',
+  'Cured Catering',
+  "Hooky's",
+  'Hanoi Bites'
 ]
 
 // ── Helpers ──────────────────────────────────────────────────────────────────
@@ -173,11 +186,32 @@ async function main() {
     process.exit(1)
   }
 
-  console.log(`Fetching Google ratings for ${RESTAURANTS.length} restaurants...\n`)
+  // Load existing data to avoid re-querying known restaurants
+  let existing = {}
+  if (existsSync(OUTPUT_PATH)) {
+    try {
+      existing = JSON.parse(readFileSync(OUTPUT_PATH, 'utf-8'))
+    } catch {
+      // Ignore parse errors — will re-fetch everything
+    }
+  }
 
-  const results = {}
+  const toFetch = RESTAURANTS.filter(name => !existing[name])
+  const forceRefresh = process.argv.includes('--force')
 
-  for (const name of RESTAURANTS) {
+  if (forceRefresh) {
+    console.log(`Force refresh: fetching all ${RESTAURANTS.length} restaurants...\n`)
+  } else if (toFetch.length === 0) {
+    console.log(`All ${RESTAURANTS.length} restaurants already in ${OUTPUT_PATH}. Use --force to re-fetch all.`)
+    return
+  } else {
+    console.log(`${Object.keys(existing).length} restaurants already cached, fetching ${toFetch.length} new...\n`)
+  }
+
+  const fetchList = forceRefresh ? RESTAURANTS : toFetch
+  const results = forceRefresh ? {} : { ...existing }
+
+  for (const name of fetchList) {
     process.stdout.write(`  ${name}... `)
 
     const place = await searchPlace(name)
