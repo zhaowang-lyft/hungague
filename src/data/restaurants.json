@@ -20,6 +20,13 @@
     "distanceKm": 0.16,
     "address": "First Canadian Place, 100 King St W 2nd Floor, Toronto, ON M5X 1H3, Canada"
   },
+  "IQ Food Co": {
+    "googleRating": 3.9,
+    "reviewCount": 85,
+    "googleMapsUrl": "https://www.google.com/maps/place/?q=place_id:ChIJ9y-dotI0K4gRWeGmjoOAbXM",
+    "distanceKm": 0.16,
+    "address": "First Canadian Place, 100 King St W 2nd Floor, Toronto, ON M5X 1H3, Canada"
+  },
   "Flock": {
     "googleRating": 2.5,
     "reviewCount": 13,
@@ -244,6 +251,13 @@
     "distanceKm": 1.05,
     "address": "2 Murray St, Toronto, ON M5G 1X5, Canada"
   },
+  "Belly Busters": {
+    "googleRating": 3.9,
+    "reviewCount": 480,
+    "googleMapsUrl": "https://www.google.com/maps/place/?q=place_id:ChIJcWP8Jto0K4gRaxMqHxH1tTU",
+    "distanceKm": 1.12,
+    "address": "389 King St W, Toronto, ON M5V 2G5, Canada"
+  },
   "Cheffrys Artisanal Bistro": {
     "googleRating": 4.7,
     "reviewCount": 1214,
@@ -384,6 +398,13 @@
     "distanceKm": 2.15,
     "address": "1140 Bay St., Toronto, ON M5S 2B4, Canada"
   },
+  "Souk Tabule": {
+    "googleRating": 4.4,
+    "reviewCount": 1467,
+    "googleMapsUrl": "https://www.google.com/maps/place/?q=place_id:ChIJv4SJ9hTL1IkR-9dWRMESUNE",
+    "distanceKm": 2.18,
+    "address": "494 Front St E, Toronto, ON M5A 0J1, Canada"
+  },
   "Koh Samui": {
     "googleRating": 3.9,
     "reviewCount": 284,
@@ -474,6 +495,13 @@
     "googleMapsUrl": "https://www.google.com/maps/place/?q=place_id:ChIJ4WbjGBQ1K4gRCgdd9EPioJE",
     "distanceKm": 3.24,
     "address": "774 College St, Toronto, ON M6G 1C6, Canada"
+  },
+  "Vildas": {
+    "googleRating": 4.4,
+    "reviewCount": 256,
+    "googleMapsUrl": "https://www.google.com/maps/place/?q=place_id:ChIJlzOZZ7o1K4gRtKZZMOhGlrw",
+    "distanceKm": 3.44,
+    "address": "209 Dovercourt Rd, Toronto, ON M6J 3C7, Canada"
   },
   "Liberty Eats": {
     "googleRating": 4.7,
@@ -614,6 +642,13 @@
     "googleMapsUrl": "https://www.google.com/maps/place/?q=place_id:ChIJC4qFx683K4gRg5mCvdUSB4o",
     "distanceKm": 7.52,
     "address": "3072 Dundas St W, Toronto, ON M6P 1Z7, Canada"
+  },
+  "Rise and Dine Eatery": {
+    "googleRating": 4.5,
+    "reviewCount": 997,
+    "googleMapsUrl": "https://www.google.com/maps/place/?q=place_id:ChIJRzEnlzXM1IkR0yBI8fdDWeA",
+    "distanceKm": 8.35,
+    "address": "2714 St Clair Ave E, East York, ON M4B 1M6, Canada"
   },
   "Mooring Eats": {
     "googleRating": 4.7,

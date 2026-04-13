@@ -131,7 +131,12 @@ const RESTAURANTS = [
   'Burgers n Fries Forever',
   'Cured Catering',
   "Hooky's",
-  'Hanoi Bites'
+  'Hanoi Bites',
+  "Belly Busters",
+  "Rise and Dine Eatery",
+  "Vildas",
+  "Souk Tabule",
+  "IQ Food Co"
 ]
 
 // ── Helpers ──────────────────────────────────────────────────────────────────

@@ -5,3 +5,4 @@ claude/
 .env
 .DS_Store
 *.zip
+claude.md
