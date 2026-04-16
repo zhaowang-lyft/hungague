@@ -6,6 +6,27 @@
     "distanceKm": 0.05,
     "address": "East Tower Concourse, 333 Bay St. Unit C16B, Toronto, ON M5H 2R2, Canada"
   },
+  "Mad Radish": {
+    "googleRating": 4.8,
+    "reviewCount": 101,
+    "googleMapsUrl": "https://www.google.com/maps/place/?q=place_id:ChIJH7bhswk1K4gR8QxHWRoZdHg",
+    "distanceKm": 0.05,
+    "address": "Bay Adelaide Centre, Retail, Concourse Level, 333 Bay St. Unit C08, Toronto, ON M5H 2R2, Canada"
+  },
+  "Freebird Market": {
+    "googleRating": 4.1,
+    "reviewCount": 41,
+    "googleMapsUrl": "https://www.google.com/maps/place/?q=place_id:ChIJ0ViVZ7A1K4gRVfxseMFXHHs",
+    "distanceKm": 0.05,
+    "address": "333 Bay St., Toronto, ON M5H 2R0, Canada"
+  },
+  "Old School": {
+    "googleRating": 4.4,
+    "reviewCount": 672,
+    "googleMapsUrl": "https://www.google.com/maps/place/?q=place_id:ChIJyVgftzLL1IkRURpr-91tptc",
+    "distanceKm": 0.09,
+    "address": "21 Adelaide St W, Toronto, ON M5H 1L6, Canada"
+  },
   "Freshii": {
     "googleRating": 3.2,
     "reviewCount": 44,
@@ -26,6 +47,13 @@
     "googleMapsUrl": "https://www.google.com/maps/place/?q=place_id:ChIJ9y-dotI0K4gRWeGmjoOAbXM",
     "distanceKm": 0.16,
     "address": "First Canadian Place, 100 King St W 2nd Floor, Toronto, ON M5X 1H3, Canada"
+  },
+  "Rolltation": {
+    "googleRating": 4.2,
+    "reviewCount": 25,
+    "googleMapsUrl": "https://www.google.com/maps/place/?q=place_id:ChIJqUKDgXbL1IkR-4C4dtx6n5w",
+    "distanceKm": 0.16,
+    "address": "40 King St W Path Level, Toronto, ON M5H 1A1, Canada"
   },
   "Flock": {
     "googleRating": 2.5,
@@ -293,12 +321,33 @@
     "distanceKm": 1.26,
     "address": "152 Spadina Ave., Toronto, ON M5V 3S6, Canada"
   },
+  "Stacked Pancake House": {
+    "googleRating": 4.7,
+    "reviewCount": 1062,
+    "googleMapsUrl": "https://www.google.com/maps/place/?q=place_id:ChIJPSskZcU1K4gROJS75Z8Qg_Y",
+    "distanceKm": 1.29,
+    "address": "394 Queen St W, Toronto, ON M5V 2A6, Canada"
+  },
   "Banh Mi Vietsub": {
     "googleRating": 4.9,
     "reviewCount": 132,
     "googleMapsUrl": "https://www.google.com/maps/place/?q=place_id:ChIJscVIAQA1K4gR3NERSWfNZCI",
     "distanceKm": 1.37,
     "address": "493A Dundas St W, Toronto, ON M5T 1H1, Canada"
+  },
+  "Berkeley Cafe": {
+    "googleRating": 4.9,
+    "reviewCount": 419,
+    "googleMapsUrl": "https://www.google.com/maps/place/?q=place_id:ChIJ4XfulTrL1IkRW4lVpJGSfeM",
+    "distanceKm": 1.38,
+    "address": "262 The Esplanade, Toronto, ON M5A 4J6, Canada"
+  },
+  "Mandy's Salads": {
+    "googleRating": 3.8,
+    "reviewCount": 341,
+    "googleMapsUrl": "https://www.google.com/maps/place/?q=place_id:ChIJ4-6C43I1K4gRr2BEqSYKJic",
+    "distanceKm": 1.44,
+    "address": "437 Wellington St W, Toronto, ON M5V 1E7, Canada"
   },
   "Mandy's Salads ": {
     "googleRating": 3.8,

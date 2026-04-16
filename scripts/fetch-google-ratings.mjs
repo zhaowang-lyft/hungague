@@ -136,7 +136,14 @@ const RESTAURANTS = [
   "Rise and Dine Eatery",
   "Vildas",
   "Souk Tabule",
-  "IQ Food Co"
+  "IQ Food Co",
+  "Mad Radish",
+  "Stacked Pancake House",
+  "Freebird Market",
+  "Berkeley Cafe",
+  "Mandy's Salads",
+  "Old School",
+  "Rolltation"
 ]
 
 // ── Helpers ──────────────────────────────────────────────────────────────────
