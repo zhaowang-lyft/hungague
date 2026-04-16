@@ -38,11 +38,31 @@ npm run build
 
 ## Package for Store Upload
 
+Build first, then create the zips:
+
 ```bash
-cd dist && zip -r ../hungague-extension.zip . -x ".DS_Store" "**/.DS_Store" ".vite/*"
+npm run build
 ```
 
-This creates a `hungague-extension.zip` in the project root containing only the built extension (manifest, icons, bundled JS) — ready to upload to the Chrome Web Store or Firefox Add-on Hub.
+### Chrome Web Store
+
+```bash
+cd dist && zip -r ../hungague-chrome.zip manifest.json assets/ icons/ -x "*.DS_Store" && cd ..
+```
+
+### Firefox Add-on Hub
+
+Extension zip:
+
+```bash
+cd dist && zip -r ../hungague-firefox.zip manifest.json assets/ icons/ -x "*.DS_Store" && cd ..
+```
+
+Source code zip (required by Mozilla reviewers since the code is bundled via Vite):
+
+```bash
+zip -r hungague-source.zip manifest.json src/ public/ package.json package-lock.json vite.config.ts tsconfig.json -x "*.DS_Store"
+```
 
 ## Development
 
